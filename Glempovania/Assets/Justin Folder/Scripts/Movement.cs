@@ -14,7 +14,7 @@ public class Movement : MonoBehaviour
     private float inputJump;
     public float speedX;
     public float speedY;
-    bool jumping = false;
+    public bool jumping = false;
     // float maxSpeed;
     // float currentspeed;
     // float maxAccel;
@@ -29,7 +29,7 @@ public class Movement : MonoBehaviour
 
     void FixedUpdate()
     { 
-        rb.linearVelocity = new Vector3(speedX * inputMovement, rb.linearVelocity.y, rb.linearVelocity.z);
+        rb.linearVelocity = new Vector3(speedX * inputMovement, rb.linearVelocity.y * inputJump, rb.linearVelocity.z);
         if (inputMovement == 0)
         {
             rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, rb.linearVelocity.z);
@@ -54,7 +54,7 @@ public class Movement : MonoBehaviour
         inputJump = input.Get<float>();
         if (jumping == false)
         {
-            rb.linearVelocity = new Vector3(rb.linearVelocity.x, speedY * inputJump, rb.linearVelocity.z);
+            //rb.linearVelocity = new Vector3(rb.linearVelocity.x, speedY * inputJump, rb.linearVelocity.z);
             jumping = true;
         }
         Debug.Log("Jumped");

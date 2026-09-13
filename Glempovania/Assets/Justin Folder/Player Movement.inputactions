@@ -67,7 +67,7 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";KeyBoard",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
