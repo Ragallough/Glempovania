@@ -11,16 +11,8 @@ public class Jump_Check : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         
-    }
-    private void OnTriggerEnter(Collider collision)
-    {
-        if (collision.gameObject.CompareTag("Ground")) // Best practice for checking tags
-        {
-            player.GetComponent<Movement>().jumping = false;
-            Debug.Log("Player has landed on the floor!");
-        }
     }
 }

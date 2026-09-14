@@ -14,14 +14,20 @@ public class Movement : MonoBehaviour
     private float inputJump;
     public float speedX;
     public float speedY;
-    public bool jumping = false;
+    public bool isGrounded = false;
     // float maxSpeed;
     // float currentspeed;
     // float maxAccel;
     // float currentAccel;
     // float deccel;
 
+    LayerMask layerMask;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+   void Awake()
+    {
+        layerMask = LayerMask.GetMask("Ground");
+    }
     void Start()
     {
         rb = this.gameObject.GetComponent<Rigidbody>();
@@ -29,21 +35,19 @@ public class Movement : MonoBehaviour
 
     void FixedUpdate()
     { 
-        rb.linearVelocity = new Vector3(speedX * inputMovement, rb.linearVelocity.y * inputJump, rb.linearVelocity.z);
+        rb.linearVelocity = new Vector3(speedX * inputMovement, rb.linearVelocity.y, rb.linearVelocity.z);
         if (inputMovement == 0)
         {
             rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, rb.linearVelocity.z);
         }
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ground")) // Best practice for checking tags
+
+        Physics.Raycast(transform.position, transform.up * -1, 1);
+        if (isGrounded == Physics.Raycast(transform.position, transform.up * -1, 1))
         {
-            jumping = false;
-            Debug.Log("Player has landed on the floor!");
+            isGrounded = false; 
+            Debug.Log("raycasted");
         }
     }
-
     void OnMovement(InputValue input)
     {
         inputMovement = input.Get<float>();
@@ -52,10 +56,10 @@ public class Movement : MonoBehaviour
     public void OnJump(InputValue input)
     {
         inputJump = input.Get<float>();
-        if (jumping == false)
+        if (isGrounded == false)
         {
-            //rb.linearVelocity = new Vector3(rb.linearVelocity.x, speedY * inputJump, rb.linearVelocity.z);
-            jumping = true;
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, speedY * inputJump, rb.linearVelocity.z);
+            isGrounded = true;
         }
         Debug.Log("Jumped");
     }
