@@ -1,6 +1,7 @@
 
 
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 //private float MoveHort
@@ -9,12 +10,15 @@ public class Movement : MonoBehaviour
     public Rigidbody rb;
 
     public PlayerInput playerInput;
+
+    public GameObject flier;
   
     private float inputMovement;//move left and right lmao
     private float inputJump;
     public float speedX;
     public float speedY;
     public bool isGrounded = false;
+    public bool trig = false;
     // float maxSpeed;
     // float currentspeed;
     // float maxAccel;
@@ -62,5 +66,33 @@ public class Movement : MonoBehaviour
             isGrounded = true;
         }
         Debug.Log("Jumped");
+    }
+
+    // public void OnCollisionEnter(Collision collision)
+    // {
+    //    if (collision.gameObject.CompareTag("EnemyTerr"))
+    //     {
+    //         flier.gameObject.GetComponent<FlyerLogic>().invader = true;
+    //     } 
+    //     else
+    //     {
+    //         flier.gameObject.GetComponent<FlyerLogic>().invader = false;
+    //     }
+    // }
+    public void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.name == "EnemyTerr")
+        {
+            
+            flier.gameObject.GetComponent<FlyerLogic>().invader = true;
+        }
+    }
+    public void OnTriggerExit(Collider collision)
+    {
+        if (collision.gameObject.name == "EnemyTerr")
+        {
+            
+            flier.gameObject.GetComponent<FlyerLogic>().invader = false;
+        }
     }
 }

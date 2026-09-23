@@ -9,6 +9,8 @@ public class FlyerLogic : MonoBehaviour
     public float bounceForce = 5;
     public float clock = 0;
 
+    public bool invader = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,18 +21,21 @@ public class FlyerLogic : MonoBehaviour
     void FixedUpdate()
     {
         Debug.Log(clock);
-        if (clock >= 1)
+        if (invader == true)
         {
-            clock -= Time.deltaTime;
-        }
-        if (clock <= 1)
-        {
-            rb.linearVelocity = Vector3.zero;
-            transform.position = Vector3.MoveTowards(this.transform.position, player.gameObject.GetComponent<Transform>().position, 3 * Time.deltaTime);
-        }
-        else
-        {
-            transform.position = Vector3.MoveTowards(this.transform.position, player.gameObject.GetComponent<Transform>().position, 3 * Time.deltaTime);
+            if (clock >= 1)
+            {
+                clock -= Time.deltaTime;
+            }
+            if (clock <= 1)
+            {
+                rb.linearVelocity = Vector3.zero;
+                transform.position = Vector3.MoveTowards(this.transform.position, player.gameObject.GetComponent<Transform>().position, 3 * Time.deltaTime);
+            }
+            else
+            {
+                transform.position = Vector3.MoveTowards(this.transform.position, player.gameObject.GetComponent<Transform>().position, 3 * Time.deltaTime);
+            }
         }
         // if (clock == 0)
         // {
