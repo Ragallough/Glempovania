@@ -314,6 +314,8 @@ MonoBehaviour:
   speedY: 10
   isGrounded: 0
   trig: 0
+  canDoubleJump: 0
+  remainingJumps: 4
 --- !u!136 &539020319
 CapsuleCollider:
   m_ObjectHideFlags: 0
