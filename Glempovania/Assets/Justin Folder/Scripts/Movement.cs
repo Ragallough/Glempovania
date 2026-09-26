@@ -1,5 +1,5 @@
-
-
+using System.Runtime.CompilerServices;
+using NUnit.Framework;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -18,7 +18,10 @@ public class Movement : MonoBehaviour
     public float speedX;
     public float speedY;
     public bool isGrounded = false;
+    //trig means triggered not trigonometry
     public bool trig = false;
+    public bool canDoubleJump = false;
+    public int remainingJumps = 4;
     // float maxSpeed;
     // float currentspeed;
     // float maxAccel;
@@ -45,29 +48,75 @@ public class Movement : MonoBehaviour
             rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, rb.linearVelocity.z);
         }
 
-        Physics.Raycast(transform.position, transform.up * -1, 1);
-        if (isGrounded == Physics.Raycast(transform.position, transform.up * -1, 1))
+        //Physics.Raycast(transform.position, transform.up * -1, 1);
+        if (isGrounded == Physics.Raycast(transform.position, transform.up * -1, 1, layerMask))
         {
             isGrounded = false; 
             Debug.Log("raycasted");
         }
+Debug.Log("RemainingJumps:"+ remainingJumps);
+        if (remainingJumps <= 0)
+        {
+            isGrounded = true;
+            remainingJumps = 4;
+        }
+        
+        // if (jumping >= 2)
+        // {
+        //     //isGrounded = true;
+        //     jumping = 0;
+        // }
+        // if (isGrounded == false && jumping == 2)
+        // {
+        //     jumping = 1;
+        //     jumpedOnce = true;
+        // }
+        // if (jumpedOnce == true && jumping == 2 )
+        // {
+        //     isGrounded = true;
+        //     jumpedOnce = false;
+        //     jumping = 0;
+        // }
+        
+        
+        // if (isGrounded == false && canDoubleJump == true && jumping == 2)
+        // {
+        //     isGrounded = true;
+        //     jumping = 0;
+        // }
     }
     void OnMovement(InputValue input)
     {
         inputMovement = input.Get<float>();
-        Debug.Log(input.Get<float>());
+        //Debug.Log(input.Get<float>());
     }
     public void OnJump(InputValue input)
     {
         inputJump = input.Get<float>();
-        if (isGrounded == false)
+        if (isGrounded == false && canDoubleJump == false)
         {
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, speedY * inputJump, rb.linearVelocity.z);
             isGrounded = true;
         }
-        Debug.Log("Jumped");
+        
+        if (isGrounded == false && canDoubleJump == true && remainingJumps > 0)
+        {
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, speedY * inputJump, rb.linearVelocity.z);
+            remainingJumps -= 1;
+        }
+        
+        
+        // if (isGrounded == false && canDoubleJump == true && remainingJumps == 1)
+        // {
+        //     rb.linearVelocity = new Vector3(rb.linearVelocity.x, speedY * inputJump, rb.linearVelocity.z);
+        //     remainingJumps = 0;
+        // }
+        
+        
     }
-
+/// <summary>
+/// All this commented Code here is wrong! murder it with fire!
+/// </summary>
     // public void OnCollisionEnter(Collision collision)
     // {
     //    if (collision.gameObject.CompareTag("EnemyTerr"))
@@ -85,6 +134,11 @@ public class Movement : MonoBehaviour
         {
             
             flier.gameObject.GetComponent<FlyerLogic>().invader = true;
+        }
+        if (collision.gameObject.name == "Hamilton")
+        {
+            canDoubleJump = true;
+            Destroy(collision.gameObject);
         }
     }
     public void OnTriggerExit(Collider collision)
