@@ -20,7 +20,7 @@ public class FlyerLogic : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log(clock);
+        //Debug.Log(clock);
         if (invader == true)
         {
             if (clock >= 1)

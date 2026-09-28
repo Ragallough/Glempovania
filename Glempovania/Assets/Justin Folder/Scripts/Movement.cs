@@ -52,9 +52,9 @@ public class Movement : MonoBehaviour
         if (isGrounded == Physics.Raycast(transform.position, transform.up * -1, 1, layerMask))
         {
             isGrounded = false; 
-            Debug.Log("raycasted");
+            //Debug.Log("raycasted");
         }
-Debug.Log("RemainingJumps:"+ remainingJumps);
+//Debug.Log("RemainingJumps:"+ remainingJumps);
         if (remainingJumps <= 0)
         {
             isGrounded = true;
