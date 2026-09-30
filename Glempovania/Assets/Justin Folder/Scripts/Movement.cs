@@ -18,7 +18,7 @@ public class Movement : MonoBehaviour
     private float inputJump;
     public float speedX;
     public float speedY;
-    public bool isGrounded = false;
+    public bool isGrounded;
     //trig means triggered not trigonometry
     public bool trig = false;
     public bool canDoubleJump = false;
@@ -44,24 +44,31 @@ public class Movement : MonoBehaviour
 
     void FixedUpdate()
     { 
-        rb.linearVelocity = new Vector3(speedX * inputMovement, rb.linearVelocity.y, rb.linearVelocity.z);
+        if (inputMovement != 0)
+        {
+            rb.linearVelocity = new Vector3(speedX * inputMovement, rb.linearVelocity.y, rb.linearVelocity.z);
+            glempoAnimator.gameObject.GetComponent<Animator>().SetFloat("Movement", 1);
+        }
+        //rb.linearVelocity = new Vector3(speedX * inputMovement, rb.linearVelocity.y, rb.linearVelocity.z);
         if (inputMovement == 0)
         {
             rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, rb.linearVelocity.z);
+            glempoAnimator.gameObject.GetComponent<Animator>().SetFloat("Movement", 0);
         }
 
         //Physics.Raycast(transform.position, transform.up * -1, 1);
-        if (isGrounded == Physics.Raycast(transform.position, transform.up * -1, 1, layerMask))
+        if (Physics.Raycast(transform.position, transform.up * -1, 1, layerMask))
         {
-            isGrounded = false; 
+            isGrounded = true; 
+            remainingJumps = 3;
             //Debug.Log("raycasted");
         }
-//Debug.Log("RemainingJumps:"+ remainingJumps);
-        if (remainingJumps <= 0)
+        else
         {
-            isGrounded = true;
-            remainingJumps = 4;
+            isGrounded = false;
         }
+//Debug.Log("RemainingJumps:"+ remainingJumps);
+        
 
         if (isGrounded == true)
         {
@@ -106,18 +113,23 @@ public class Movement : MonoBehaviour
     void OnMovement(InputValue input)
     {
         inputMovement = input.Get<float>();
-        glempoAnimator.gameObject.GetComponent<Animator>().SetFloat("Movement", 1);
-        //Debug.Log(input.Get<float>());
+        
+        Debug.Log("move"+ input.Get<float>());
     }
     public void OnJump(InputValue input)
     {
         inputJump = input.Get<float>();
-        if (isGrounded == false && canDoubleJump == false)
+        // if you are on the ground and you haven't collected the double jump item
+        if (isGrounded == true && canDoubleJump == false)
         {
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, speedY * inputJump, rb.linearVelocity.z);
-            isGrounded = true;
+            //isGrounded = true;
         }
-        
+        if (isGrounded == true && canDoubleJump == true)
+        {
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, speedY * inputJump, rb.linearVelocity.z);
+        }
+        //if you aren't on the ground you collected the double jump item and the remaining amount of jumps is greater than zero
         if (isGrounded == false && canDoubleJump == true && remainingJumps > 0)
         {
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, speedY * inputJump, rb.linearVelocity.z);
