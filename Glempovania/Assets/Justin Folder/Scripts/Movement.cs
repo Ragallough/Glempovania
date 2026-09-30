@@ -1,6 +1,7 @@
 using System.Runtime.CompilerServices;
 using NUnit.Framework;
 using TMPro;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -12,7 +13,7 @@ public class Movement : MonoBehaviour
     public PlayerInput playerInput;
 
     public GameObject flier;
-  
+    public GameObject glempoAnimator;
     private float inputMovement;//move left and right lmao
     private float inputJump;
     public float speedX;
@@ -22,6 +23,7 @@ public class Movement : MonoBehaviour
     public bool trig = false;
     public bool canDoubleJump = false;
     public int remainingJumps = 4;
+
     // float maxSpeed;
     // float currentspeed;
     // float maxAccel;
@@ -60,7 +62,23 @@ public class Movement : MonoBehaviour
             isGrounded = true;
             remainingJumps = 4;
         }
-        
+
+        if (isGrounded == true)
+        {
+            glempoAnimator.gameObject.GetComponent<Animator>().SetBool("Grounded", true);
+        }
+        else if (isGrounded == false)
+        {
+            glempoAnimator.gameObject.GetComponent<Animator>().SetBool("Grounded", false);
+        }
+        if (inputMovement < 0)
+        {
+            rb.gameObject.GetComponent<Transform>().rotation = Quaternion.Euler(this.transform.rotation.x, -180, this.transform.rotation.z );
+        }
+        if (inputMovement > 0)
+        {
+            rb.gameObject.GetComponent<Transform>().rotation = Quaternion.Euler(this.transform.rotation.x, 0, this.transform.rotation.z );
+        }
         // if (jumping >= 2)
         // {
         //     //isGrounded = true;
@@ -88,6 +106,7 @@ public class Movement : MonoBehaviour
     void OnMovement(InputValue input)
     {
         inputMovement = input.Get<float>();
+        glempoAnimator.gameObject.GetComponent<Animator>().SetFloat("Movement", 1);
         //Debug.Log(input.Get<float>());
     }
     public void OnJump(InputValue input)
@@ -104,7 +123,7 @@ public class Movement : MonoBehaviour
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, speedY * inputJump, rb.linearVelocity.z);
             remainingJumps -= 1;
         }
-        
+        glempoAnimator.gameObject.GetComponent<Animator>().SetBool("Jump", true);
         
         // if (isGrounded == false && canDoubleJump == true && remainingJumps == 1)
         // {
