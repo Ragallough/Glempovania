@@ -16,6 +16,12 @@ public class Attacks : MonoBehaviour
     {
         
     }
+    
+    void AttackDone()
+    {
+        Debug.Log("AttackDone");
+    }
+
     void OnAttack()
     {
         glempoAnimator.gameObject.GetComponent<Animator>().SetBool("Attack", true);

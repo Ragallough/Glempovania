@@ -13,7 +13,7 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("FlierHealth:" + flierHealth);
+        //Debug.Log("FlierHealth:" + flierHealth);
         if (this.gameObject.name == "Flier")
         {
             if (flierHealth <= 0)
