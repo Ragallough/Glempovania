@@ -19,7 +19,7 @@ public class Player_Health : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //Debug.Log("PlayerHealth:" + health);
+        Debug.Log("PlayerHealth:" + health);
         if (health == 4)
         {
             Canvas.gameObject.GetComponent<RawImage>().texture = fullhealth;

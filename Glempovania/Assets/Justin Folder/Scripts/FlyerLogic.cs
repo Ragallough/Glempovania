@@ -5,6 +5,7 @@ public class FlyerLogic : MonoBehaviour
 {
     Rigidbody rb;
     public GameObject player;
+    public GameObject glempoAnimator;
     public float bounceDirection;
     public float bounceForce = 5;
     public float clock = 0;
@@ -74,5 +75,10 @@ public class FlyerLogic : MonoBehaviour
             // Apply force impulse to bounce away
             rb.AddForce(bounceDirection * bounceForce, ForceMode.Impulse);
             clock = 3;
+        if (collision.gameObject.name == "GlempSword" && glempoAnimator.gameObject.GetComponent<Animator>().GetBool("Attack") == true)
+        {
+            rb.AddForce(bounceDirection * bounceForce, ForceMode.Impulse);
+            
+        }
     }
 }
