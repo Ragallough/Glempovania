@@ -12,7 +12,7 @@ public class Movement : MonoBehaviour
 
     public PlayerInput playerInput;
 
-    public GameObject flier;
+    //public GameObject flier;
     public GameObject glempoAnimator;
     private float inputMovement;//move left and right lmao
     private float inputJump;
@@ -164,23 +164,23 @@ public class Movement : MonoBehaviour
     // }
     public void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.name == "EnemyTerr")
-        {
+        // if (collision.gameObject.CompareTag("EnemyTerr"))
+        // {
             
-            flier.gameObject.GetComponent<FlyerLogic>().invader = true;
-        }
+        //     collision.gameObject.GetComponent<FlyerLogic>().invader = true;
+        // }
         if (collision.gameObject.name == "Hamilton")
         {
             canDoubleJump = true;
             Destroy(collision.gameObject);
         }
     }
-    public void OnTriggerExit(Collider collision)
-    {
-        if (collision.gameObject.name == "EnemyTerr")
-        {
+    // public void OnTriggerExit(Collider collision)
+    // {
+    //     if (collision.gameObject.name == "EnemyTerr")
+    //     {
             
-            flier.gameObject.GetComponent<FlyerLogic>().invader = false;
-        }
-    }
+    //         flier.gameObject.GetComponent<FlyerLogic>().invader = false;
+    //     }
+    // }
 }

@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 public class Attacks : MonoBehaviour
 {
     public GameObject glempoAnimator;
+    public GameObject glempSwrdHitBx;
+    public GameObject glempSwrdSlashAnim;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,6 +27,8 @@ public class Attacks : MonoBehaviour
     void OnAttack()
     {
         glempoAnimator.gameObject.GetComponent<Animator>().SetBool("Attack", true);
-        Debug.Log("Swing!");
+        //Debug.Log("Swing!");
+        glempSwrdHitBx.gameObject.GetComponent<BoxCollider>().enabled = true;
+        glempSwrdSlashAnim.gameObject.GetComponent<ParticleSystem>().Play(); 
     }
 }

@@ -1,4 +1,4 @@
-using UnityEditor;
+
 using UnityEngine;
 
 public class swordCollision : MonoBehaviour
@@ -25,7 +25,7 @@ public class swordCollision : MonoBehaviour
                 hit = false;
             }
             //Debug.Log("clock:" + clock);
-            //Debug.Log("EnemyHealth" + flier.gameObject.GetComponent<EnemyHealth>().flierHealth);
+            Debug.Log("EnemyHealth:" + flier.gameObject.GetComponent<EnemyHealth>().flierHealth);
         }
     }
     void OnTriggerEnter(Collider collision)
@@ -34,14 +34,14 @@ public class swordCollision : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("EnemyFlier") && hit == false)
             {
-                flier.gameObject.GetComponent<EnemyHealth>().flierHealth -= 1;
+                collision.gameObject.GetComponent<EnemyHealth>().flierHealth -= 1;
                 
                 hit = true;
                 clock = 1f;
             }
-            if (collision.gameObject.CompareTag("Enemywalker"))
+            if (collision.gameObject.CompareTag("Enemywalker") && hit == false)
             {
-                flier.gameObject.GetComponent<EnemyHealth>().walkerHealth -= 1;
+                collision.gameObject.GetComponent<EnemyHealth>().walkerHealth -= 1;
             }
         }
     }

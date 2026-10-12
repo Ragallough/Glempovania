@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ground
   - EnemyFlier
+  - SeedCollision
+  - EnemyWalker
+  - EnemyTerr
   layers:
   - Default
   - TransparentFX

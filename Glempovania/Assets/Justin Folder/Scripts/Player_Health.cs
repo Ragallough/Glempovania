@@ -10,6 +10,8 @@ public class Player_Health : MonoBehaviour
 
     public GameObject Canvas;
     public int health;
+    public bool gothit = false;
+    public float clock = 1;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -36,13 +38,25 @@ public class Player_Health : MonoBehaviour
         {
             Canvas.gameObject.GetComponent<RawImage>().texture = quarterFull;
         }
+        if (gothit == true)
+        {
+            clock -= Time.deltaTime;
+        }
+        if (clock <= 0)
+        {
+            gothit = false;
+        }
     }
+
     public void OnTriggerEnter(Collider collision)
     {
-        if (collision.name == "Flier")
+        if (gothit == false)
         {
-            health -=1;
+            if (collision.name == "Flier")
+            {
+                health -=1;
+                gothit = true;
+            }
         }
-
     }
 }

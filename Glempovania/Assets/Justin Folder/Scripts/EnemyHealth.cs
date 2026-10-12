@@ -7,7 +7,8 @@ public class EnemyHealth : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        flierHealth = 2;
+        walkerHealth = 3;
     }
 
     // Update is called once per frame
