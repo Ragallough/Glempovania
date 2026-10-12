@@ -122,20 +122,23 @@ public class Movement : MonoBehaviour
         // if you are on the ground and you haven't collected the double jump item
         if (isGrounded == true && canDoubleJump == false)
         {
+            glempoAnimator.gameObject.GetComponent<Animator>().SetBool("Jump", true);
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, speedY * inputJump, rb.linearVelocity.z);
             //isGrounded = true;
         }
         if (isGrounded == true && canDoubleJump == true)
         {
+            glempoAnimator.gameObject.GetComponent<Animator>().SetBool("Jump", true);
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, speedY * inputJump, rb.linearVelocity.z);
         }
         //if you aren't on the ground you collected the double jump item and the remaining amount of jumps is greater than zero
         if (isGrounded == false && canDoubleJump == true && remainingJumps > 0)
         {
+            glempoAnimator.gameObject.GetComponent<Animator>().SetBool("Jump", true);
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, speedY * inputJump, rb.linearVelocity.z);
             remainingJumps -= 1;
         }
-        glempoAnimator.gameObject.GetComponent<Animator>().SetBool("Jump", true);
+        
         
         // if (isGrounded == false && canDoubleJump == true && remainingJumps == 1)
         // {
