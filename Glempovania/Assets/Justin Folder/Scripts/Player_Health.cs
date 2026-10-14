@@ -56,6 +56,7 @@ public class Player_Health : MonoBehaviour
             {
                 health -=1;
                 gothit = true;
+                this.gameObject.GetComponent<ParticleSystem>().Play();
             }
         }
     }

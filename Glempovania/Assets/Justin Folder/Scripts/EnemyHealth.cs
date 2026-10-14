@@ -3,7 +3,9 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public int flierHealth = 2;
-    public int walkerHealth = 3;
+    public int walkerHealth = 1;
+    public GameObject flierhurtParticle;
+    public GameObject seedlingdeadParticle;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,6 +22,7 @@ public class EnemyHealth : MonoBehaviour
             if (flierHealth <= 0)
             {
                 Destroy(this.gameObject);
+                flierhurtParticle.gameObject.GetComponent<ParticleSystem>().Play();
             }
         }
         if (this.gameObject.name == "Walker")
@@ -27,6 +30,7 @@ public class EnemyHealth : MonoBehaviour
             if (walkerHealth <= 0)
             {
                 Destroy(this.gameObject);
+                seedlingdeadParticle.gameObject.GetComponent<ParticleSystem>().Play();
             }
         }
     }
