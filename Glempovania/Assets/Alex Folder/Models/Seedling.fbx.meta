@@ -1,0 +1,346 @@
+fileFormatVersion: 2
+guid: 80cd710ff14194341a1e890bcff31599
+ModelImporter:
+  serializedVersion: 24300
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+    searchTexturesGlobally: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: Seedling(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Nutlet
+      parentName: Seedling(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.0328084, y: 0.0328084, z: 0.0328084}
+    - name: Leaf
+      parentName: Nutlet
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Shell
+      parentName: Nutlet
+      position: {x: -0, y: 0.20153582, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Body
+      parentName: Nutlet
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Reference
+      parentName: Seedling(Clone)
+      position: {x: -0, y: 0.00028742792, z: -0.018235486}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.0328084, y: 0.0328084, z: 0.0328084}
+    - name: Seedlet_Hips
+      parentName: Seedlet_Reference
+      position: {x: -0, y: 4.5919924, z: 0.8885413}
+      rotation: {x: 0.50043213, y: -0.4995675, z: -0.50043213, w: 0.4995675}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_LeftUpLeg
+      parentName: Seedlet_Hips
+      position: {x: 0.84316903, y: -0.15825956, z: 1.8072507}
+      rotation: {x: -0.00000074183896, y: -0.000000069184026, z: 0.99567944, w: -0.09285723}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_LeftLeg
+      parentName: Seedlet_LeftUpLeg
+      position: {x: -2.0743172, y: -0.000029360757, z: 0.00000010650561}
+      rotation: {x: 0, y: -0, z: -0.25441027, w: 0.9670964}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_LeftFoot
+      parentName: Seedlet_LeftLeg
+      position: {x: -1.5428656, y: -0.000005802657, z: 0.0000011960358}
+      rotation: {x: -0.00000044275978, y: -0.00000056417656, z: 0.78667164, w: 0.6173716}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_LeftToeBase
+      parentName: Seedlet_LeftFoot
+      position: {x: -0.74706566, y: 0.0000000036164614, z: -0.0000003017261}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_RightUpLeg
+      parentName: Seedlet_Hips
+      position: {x: 0.84316903, y: -0.15825956, z: -1.8072507}
+      rotation: {x: 0.0000002072752, y: -0.0000022255426, z: 0.09273336, w: 0.995691}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_RightLeg
+      parentName: Seedlet_RightUpLeg
+      position: {x: 2.074318, y: 0.000028885823, z: -0.00000011650605}
+      rotation: {x: -0.00000061538606, y: 0.00000016160085, z: -0.2539893, w: 0.967207}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_RightFoot
+      parentName: Seedlet_RightLeg
+      position: {x: 1.542864, y: 0.000005768056, z: 0.00000009701027}
+      rotation: {x: -0.000031933785, y: 0.000027668713, z: 0.78647965, w: 0.6176163}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_RightToeBase
+      parentName: Seedlet_RightFoot
+      position: {x: 0.7470653, y: 0.0000000023962097, z: -2.2184968e-10}
+      rotation: {x: 0.000025417658, y: -0.00000010616827, z: 2.6985488e-12, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Spine
+      parentName: Seedlet_Hips
+      position: {x: -2.1716454, y: -0.0000000071239374, z: 0}
+      rotation: {x: 0, y: -0, z: -0.0026052373, w: 0.9999966}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Spine1
+      parentName: Seedlet_Spine
+      position: {x: -2.3329666, y: 0.000000106679956, z: 0.00000013808737}
+      rotation: {x: 0, y: 0, z: 0.030421667, w: 0.99953717}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Spine2
+      parentName: Seedlet_Spine1
+      position: {x: -2.632728, y: 0.000000101946156, z: 0.00000007834743}
+      rotation: {x: 0, y: 0, z: 0.1509694, w: 0.98853844}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Neck
+      parentName: Seedlet_Spine2
+      position: {x: -2.8093898, y: -0.0000053432695, z: 0.00000007844698}
+      rotation: {x: 0, y: 0, z: 0.51065034, w: 0.8597885}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Head
+      parentName: Seedlet_Neck
+      position: {x: -3.491816, y: 0.0000023861649, z: 0.000000014717567}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Ctrl_Reference
+      parentName: Seedling(Clone)
+      position: {x: -0, y: 0.00028742792, z: -0.01911611}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.0328084, y: 0.0328084, z: 0.0328084}
+    - name: Seedlet_Ctrl_HipsEffector
+      parentName: Seedlet_Ctrl_Reference
+      position: {x: -0, y: 3.749098, z: 3.079715}
+      rotation: {x: 3.061617e-17, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Ctrl_LeftAnkleEffector
+      parentName: Seedlet_Ctrl_Reference
+      position: {x: -1.8072572, y: 0.2503908, z: 2.9595106}
+      rotation: {x: -0.00000008940698, y: 3.601047e-16, z: -1.2049899e-15, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Ctrl_RightAnkleEffector
+      parentName: Seedlet_Ctrl_Reference
+      position: {x: 1.8072355, y: 0.24998632, z: 2.9599106}
+      rotation: {x: 0.00000010430816, y: -0.000000015482929, z: 0.000000035389814, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Ctrl_LeftKneeEffector
+      parentName: Seedlet_Ctrl_Reference
+      position: {x: -1.807254, y: 1.7098976, z: 3.4597845}
+      rotation: {x: 0.16436206, y: -0.000000081121186, z: -0.00000083930144, w: 0.98640007}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Ctrl_RightKneeEffector
+      parentName: Seedlet_Ctrl_Reference
+      position: {x: 1.8072416, y: 1.7098023, z: 3.4592767}
+      rotation: {x: 0.1640554, y: -0.00000015444414, z: -0.000001924025, w: 0.98645115}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Ctrl_ChestOriginEffector
+      parentName: Seedlet_Ctrl_Reference
+      position: {x: -0, y: 6.763634, z: 3.2431872}
+      rotation: {x: 0.000000016477586, y: 0.00000002980233, z: 0.000000029802326, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Ctrl_ChestEndEffector
+      parentName: Seedlet_Ctrl_Reference
+      position: {x: -0, y: 7.6748314, z: 2.8782017}
+      rotation: {x: 0.00000006118107, y: 1.1064452e-15, z: 0.000000014901161, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Ctrl_LeftFootEffector
+      parentName: Seedlet_Ctrl_Reference
+      position: {x: -1.8072572, y: 0.18308161, z: 3.703538}
+      rotation: {x: 1.0949198e-23, y: -0.00000008940698, z: -1.2246469e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Ctrl_RightFootEffector
+      parentName: Seedlet_Ctrl_Reference
+      position: {x: 1.8072985, y: 0.18267688, z: 3.7039375}
+      rotation: {x: -4.02597e-15, y: -0.000000113760734, z: 0.000000035389803, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Ctrl_HeadEffector
+      parentName: Seedlet_Ctrl_Reference
+      position: {x: -0.00000030959936, y: 14.851533, z: -1.3210267}
+      rotation: {x: 0.000011672465, y: 1.7394419e-13, z: 0.000000014901161, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Ctrl_LeftHipEffector
+      parentName: Seedlet_Ctrl_Reference
+      position: {x: -1.8072507, y: 3.749098, z: 3.079715}
+      rotation: {x: -0.09199637, y: 0.00000033900125, z: -0.0000007450578, w: 0.99575937}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Ctrl_RightHipEffector
+      parentName: Seedlet_Ctrl_Reference
+      position: {x: 1.8072507, y: 3.749098, z: 3.079715}
+      rotation: {x: -0.09186755, y: 0.0000000037252645, z: -0.0000022488944, w: 0.9957712}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Ctrl_Hips
+      parentName: Seedlet_Ctrl_Reference
+      position: {x: 0, y: 4.5073423, z: 0.74237615}
+      rotation: {x: 3.061617e-17, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Ctrl_LeftUpLeg
+      parentName: Seedlet_Ctrl_Hips
+      position: {x: -1.8072507, y: -0.84289414, z: -0.15971729}
+      rotation: {x: -0.09199637, y: 0.00000033900125, z: -0.0000007450578, w: 0.99575937}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Ctrl_LeftLeg
+      parentName: Seedlet_Ctrl_LeftUpLeg
+      position: {x: -0, y: -2.0743172, z: 8.459899e-18}
+      rotation: {x: 0.25441027, y: -0.00000021549613, z: -0.000000052561095, w: 0.9670964}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Ctrl_LeftFoot
+      parentName: Seedlet_Ctrl_LeftLeg
+      position: {x: -0, y: -1.5428656, z: 0}
+      rotation: {x: -0.16436213, y: 0.00000008112119, z: 0.0000008393015, w: 0.98640007}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Ctrl_LeftToeBase
+      parentName: Seedlet_Ctrl_LeftFoot
+      position: {x: -0, y: -0.06730933, z: 0.74402755}
+      rotation: {x: 2.2365468e-32, y: -0, z: -1.2246469e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Ctrl_RightUpLeg
+      parentName: Seedlet_Ctrl_Hips
+      position: {x: 1.8072507, y: -0.84289414, z: -0.15971729}
+      rotation: {x: -0.09186755, y: 0.0000000037252645, z: -0.0000022488944, w: 0.9957712}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Ctrl_RightLeg
+      parentName: Seedlet_Ctrl_RightUpLeg
+      position: {x: -0, y: -2.0743172, z: 0.000020293091}
+      rotation: {x: 0.2539845, y: 0.00000038823293, z: 0.00000028895855, w: 0.96720827}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Ctrl_RightFoot
+      parentName: Seedlet_Ctrl_RightLeg
+      position: {x: -0, y: -1.5428656, z: 0}
+      rotation: {x: -0.1640553, y: 0.00000014497708, z: 0.0000019614752, w: 0.98645115}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Ctrl_RightToeBase
+      parentName: Seedlet_Ctrl_RightFoot
+      position: {x: 0.00006307754, y: -0.06730933, z: 0.7440275}
+      rotation: {x: 3.66399e-24, y: -0.00000002991875, z: -1.2246469e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Ctrl_Spine
+      parentName: Seedlet_Ctrl_Hips
+      position: {x: -0, y: 2.1716416, z: 0.0037551664}
+      rotation: {x: 0.000000016477586, y: 0.00000002980233, z: 0.000000029802326, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Ctrl_Spine1
+      parentName: Seedlet_Ctrl_Spine
+      position: {x: -0, y: 2.3329108, z: 0.016189853}
+      rotation: {x: 0.000000014901165, y: -0.000000029802333, z: -0.000000014901165, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Ctrl_Spine2
+      parentName: Seedlet_Ctrl_Spine1
+      position: {x: -0, y: 2.6289039, z: -0.14186977}
+      rotation: {x: 0.000000029802319, y: -1.0117237e-17, z: -1.0906696e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Ctrl_Neck
+      parentName: Seedlet_Ctrl_Spine2
+      position: {x: -0, y: 2.6322937, z: -0.9818295}
+      rotation: {x: 0.46919665, y: -0.000000013982868, z: -0.000000001997482, w: 0.8830937}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Seedlet_Ctrl_Head
+      parentName: Seedlet_Ctrl_Neck
+      position: {x: -0, y: 0.4937617, z: -3.456748}
+      rotation: {x: 3.061617e-17, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
